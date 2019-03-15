@@ -1,0 +1,59 @@
+balanceBtn.setOnAction(click ->{ 
+GridPane grid2 = new GridPane();
+
+grid2.setPadding(new Insets(0, 10, 0, 10));
+Text text = new Text();
+Label username = new Label("Username")
+HBox hb = new HBox();
+hb.getChildren().addAll(label1, textField);
+hb.setSpacing(10);
+
+});
+--------------------------------------------------------------------
+public String addToHistory(String add ,ArrayList<String> history)
+{
+	history.add("0");
+	int size = history.size();
+	
+	
+	
+}
+public void historyNavigation()
+{
+	int size = history.size();
+	
+}
+
+public void addToHistory(ArrayList<String> history,String action)
+{
+	int size = this.history.size();
+	if(size == 4)
+		{history.add(0, action);
+	history.remove(5);
+		}
+	else history.add(action);
+}
+
+public void displayHistory()
+{
+	for(int i=0;i<history.size();i++)
+	{
+		System.out.println(history.get(i));
+	}
+}
+
+
+}
+}
+public ArrayList<String> getHistory() {
+	return history;
+}
+public void setHistory(ArrayList<String> history) {
+	this.history = history;
+}
+public String getAction() {
+	return action;
+}
+public void setAction(String action) {
+	this.action = action;
+}

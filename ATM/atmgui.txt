@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import javafx.application.Application;
+import javafx.scene.text.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+import javafx.scene.control.*;
+public class atmGUI extends Application {
+	
+	public void start(Stage primaryStage) throws Exception {
+		ArrayList<String> history = new ArrayList();
+		ATM object = new ATM("1234567",0,history);
+primaryStage.setTitle("WELCOME TO ATM");
+GridPane grid= new GridPane();
+
+Button balanceBtn = new Button("Balance Inquiry");
+grid.add(balanceBtn, 0, 0);
+Button withdrawalBtn =  new Button("Withdraw Money");
+grid.add(withdrawalBtn, 0,1 );
+Button depositBtn = new Button("Deposit Money");
+grid.add(depositBtn, 1, 0);
+balanceBtn.setOnAction(new EventHandler<ActionEvent>() {
+	@Override
+	public void handle(ActionEvent event) {
+			int bal = object.getBalance();
+			Label balanceL = new Label();
+			grid.add(balanceL, 0, 2);
+			balanceL.setText("Current Balance is "+bal);
+	}
+});
+Scene scene1= new Scene(grid, 500,500);
+primaryStage.setScene(scene1);
+primaryStage.show();
+	}
+
+}
+
+    
